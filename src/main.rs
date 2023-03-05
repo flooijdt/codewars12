@@ -68,9 +68,11 @@ fn recover_secret(triplets: Vec<[char; 3]>) -> String {
     let mut word: Vec<char> = Vec::new();
     let mut counter = 0;
     for i in vec_o_schrift.iter() {
-        if i.back.len() == counter {
-            word.push(i.letter);
-            counter += 1;
+        while word.len() < lett.len() {
+            if i.back.len() == counter {
+                word.push(i.letter);
+                counter += 1;
+            }
         }
         // if i.back.is_empty() {
         //     word.push(i.letter);
