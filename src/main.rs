@@ -70,7 +70,7 @@ fn recover_secret(triplets: Vec<[char; 3]>) -> String {
 
     // while &word.len() < &lett.len() {
 
-    let sorted = vec_o_schrift.sort_by_key(|x| x.back.len());
+    let sorted: Vec<_> = vec_o_schrift.iter().map(|x| x.back.len()).collect();
 
     // for i in vec_o_schrift.sort_by_key(|x| x.back.len()) {
     // if !word.contains(i.letter) {
