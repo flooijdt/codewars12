@@ -54,7 +54,7 @@ fn recover_secret(triplets: Vec<[char; 3]>) -> String {
                         i.front.push(l.clone());
                     }
                     if j.iter_mut().position(|x| x == &l.clone()).unwrap() < index {
-                        i.front.push(l.clone());
+                        i.back.push(l.clone());
                     }
                 }
             }
