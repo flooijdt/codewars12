@@ -45,3 +45,12 @@ fn recover_secret(triplets: Vec<[char; 3]>) -> String {
     // }
     "String".to_string()
 }
+
+#[derive(Debug, Clone)]
+struct Schrift {
+    letter: char,
+    back: Vec<char>,
+    front: Vec<char>,
+}
+
+
