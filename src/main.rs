@@ -51,10 +51,14 @@ fn recover_secret(triplets: Vec<[char; 3]>) -> String {
                 let index = j.iter().position(|&l| &l == &i.letter).unwrap();
                 for l in j.clone().iter() {
                     if j.iter_mut().position(|x| x == &l.clone()).unwrap() > index {
-                        i.front.push(l.clone());
+                        if !i.front.contains(&l) {
+                            i.front.push(l.clone());
+                        }
                     }
                     if j.iter_mut().position(|x| x == &l.clone()).unwrap() < index {
-                        i.back.push(l.clone());
+                        if !i.front.contains(&l) {
+                            i.back.push(l.clone());
+                        }
                     }
                 }
             }
