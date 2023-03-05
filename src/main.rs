@@ -26,7 +26,7 @@ fn recover_secret(triplets: Vec<[char; 3]>) -> String {
     let mut lett: Vec<char> = Vec::new();
     let mut vec_o_schrift: Vec<Schrift> = Vec::new();
 
-    for i in triplets {
+    for i in triplets.clone() {
         for c in i {
             if !lett.contains(&c) {
                 lett.push(c);
@@ -43,6 +43,19 @@ fn recover_secret(triplets: Vec<[char; 3]>) -> String {
             front: Vec::new(),
         });
         println!("{:#?}", vec_o_schrift);
+    }
+
+    for i in vec_o_schrift.iter_mut() {
+        for j in triplets.clone().iter() {
+            if j.contains(&i.letter) {
+                let index = j.iter().position(|&l| &l == &i.letter).unwrap();
+                for l in j.clone().iter() {
+                    if j.iter_mut().position(|x| x == &l.clone()).unwrap() > index {
+                        i.front.push(l.clone());
+                    }
+                }
+            }
+        }
     }
 
     // for i in triplets[1..].iter() {
