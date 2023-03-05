@@ -70,16 +70,16 @@ fn recover_secret(triplets: Vec<[char; 3]>) -> String {
 
     // while &word.len() < &lett.len() {
     // for i in vec_o_schrift.iter() {
-        // if !word.contains(i.letter) {
-            if
-            // if i.back.len() == counter {
-            //     word.push(i.letter);
-            //     counter += 1;
-            // }
-        // }
-        // if i.back.is_empty() {
-        //     word.push(i.letter);
-        // }
+    // if !word.contains(i.letter) {
+    // if
+    // if i.back.len() == counter {
+    //     word.push(i.letter);
+    //     counter += 1;
+    // }
+    // }
+    // if i.back.is_empty() {
+    //     word.push(i.letter);
+    // }
     // }
     println!("{:?}", &vec_o_schrift);
     // }
