@@ -24,6 +24,7 @@ fn recover_secret(triplets: Vec<[char; 3]>) -> String {
     let mut word_vec: Vec<char> = triplets[0].into();
     // println!("{:?}", &word_vec);
     let mut lett: Vec<char> = Vec::new();
+    let mut vec_o_schrift: Vec<Schrift> = Vec::new();
 
     for i in triplets {
         for c in i {
@@ -36,6 +37,7 @@ fn recover_secret(triplets: Vec<[char; 3]>) -> String {
     println!("{:?}", lett);
 
     for i in lett {}
+
     // for i in triplets[1..].iter() {
     //     println!("{:?}", i);
     //     for c in i.to_vec().iter() {
