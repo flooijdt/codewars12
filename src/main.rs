@@ -69,20 +69,23 @@ fn recover_secret(triplets: Vec<[char; 3]>) -> String {
     let mut counter = 0;
 
     // while &word.len() < &lett.len() {
-    for i in vec_o_schrift.iter() {
-        if i.back.len() == counter {
-            word.push(i.letter);
-            counter += 1;
-        }
+    // for i in vec_o_schrift.iter() {
+        // if !word.contains(i.letter) {
+            if
+            // if i.back.len() == counter {
+            //     word.push(i.letter);
+            //     counter += 1;
+            // }
+        // }
         // if i.back.is_empty() {
         //     word.push(i.letter);
         // }
-    }
-    println!("{:?}", &word);
+    // }
+    println!("{:?}", &vec_o_schrift);
     // }
 
-    println!("{:#?}", vec_o_schrift);
-    println!("{:#?}", word);
+    // println!("{:#?}", vec_o_schrift);
+    // println!("{:#?}", word);
     // for i in triplets[1..].iter() {
     //     println!("{:?}", i);
     //     for c in i.to_vec().iter() {
