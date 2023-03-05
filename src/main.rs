@@ -1,4 +1,3 @@
-/* Jz */
 fn main() {
     println!(
         "{:?}",
