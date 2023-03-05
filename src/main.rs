@@ -1,3 +1,10 @@
+#[derive(Debug, Clone)]
+struct Schrift {
+    letter: char,
+    back: Vec<char>,
+    front: Vec<char>,
+}
+
 fn main() {
     println!(
         "{:?}",
@@ -28,13 +35,7 @@ fn recover_secret(triplets: Vec<[char; 3]>) -> String {
 
     println!("{:?}", lett);
 
-    for i in lett {
-        for v in triplets {
-            for c in v {
-                c.
-            }
-        }
-    }
+    for i in lett {}
     // for i in triplets[1..].iter() {
     //     println!("{:?}", i);
     //     for c in i.to_vec().iter() {
@@ -52,5 +53,3 @@ struct Schrift {
     back: Vec<char>,
     front: Vec<char>,
 }
-
-
