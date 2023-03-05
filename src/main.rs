@@ -78,6 +78,7 @@ fn recover_secret(triplets: Vec<[char; 3]>) -> String {
             //     word.push(i.letter);
             // }
         }
+        println!("{:?}", &word);
     }
 
     println!("{:#?}", vec_o_schrift);
