@@ -116,7 +116,7 @@ fn recover_secret(triplets: Vec<[char; 3]>) -> String {
     //         counter += 1;
     //     }
     // }
-    println!("{:?}", &word);
+    println!("{:?}", &vec_o_schrift);
     let word2: String = word.into_iter().collect();
     word2
 }
