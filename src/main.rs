@@ -87,7 +87,7 @@ fn recover_secret(triplets: Vec<[char; 3]>) -> String {
                 counter += 1;
             }
         }
-        counter = 3;
+        counter += 3;
         println!("{:?}", &word);
         // counter += 1;
     }
