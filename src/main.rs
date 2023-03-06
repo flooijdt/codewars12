@@ -71,17 +71,23 @@ fn recover_secret(triplets: Vec<[char; 3]>) -> String {
 
     // let sorted: Vec<_> = vec_o_schrift.iter().map(|x| x.back.len()).collect();
 
-    for i in vec_o_schrift.iter() {
-        if i.back.is_empty() {
-            word.insert(0, i.letter);
-        }
-        if i.front.is_empty() {
-            word.push(i.letter);
-        }
-    }
+    // for i in vec_o_schrift.iter() {
+    //     if i.back.is_empty() {
+    //         word.insert(0, i.letter);
+    //     }
+    //     if i.front.is_empty() {
+    //         word.push(i.letter);
+    //     }
+    // }
     let mut counter = 0;
-    while word.len() < lett.len() - 2 {
+    while word.len() < lett.len() {
         for i in vec_o_schrift.iter() {
+            if i.back.is_empty() {
+                word.insert(0, i.letter);
+            }
+            if i.front.is_empty() {
+                word.push(i.letter);
+            }
             if i.back.contains(&word[counter]) && i.front.contains(&word[counter + 1]) {
                 word.insert(counter + 1, i.letter);
                 counter += 1;
@@ -90,7 +96,7 @@ fn recover_secret(triplets: Vec<[char; 3]>) -> String {
     }
     println!("{:?}", &word);
     while word.len() < lett.len() {
-        counter = 4;
+        counter = 3;
         for i in vec_o_schrift.iter() {
             if i.back.contains(&word[counter]) && i.front.contains(&word[counter + 1]) {
                 word.insert(counter + 1, i.letter);
