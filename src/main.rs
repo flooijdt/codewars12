@@ -66,37 +66,49 @@ fn recover_secret(triplets: Vec<[char; 3]>) -> String {
     }
 
     let mut word: Vec<char> = Vec::new();
-    let mut counter = 0;
 
     // while &word.len() < &lett.len() {
 
-    let sorted: Vec<_> = vec_o_schrift.iter().map(|x| x.back.len()).collect();
+    // let sorted: Vec<_> = vec_o_schrift.iter().map(|x| x.back.len()).collect();
 
-    // for i in vec_o_schrift.sort_by_key(|x| x.back.len()) {
-    // if !word.contains(i.letter) {
+    for i in vec_o_schrift.iter() {
+        if i.back.is_empty() {
+            word.insert(0, i.letter);
+        }
+        if i.front.is_empty() {
+            word.push(i.letter);
+        }
+    }
+    let mut counter = 0;
+    while counter < lett.len() {
+        for i in vec_o_schrift.iter() {
+            if i.back.contains(&word[counter]) && i.front.contains(&word[counter + 1]) {
+                word.insert(counter + 1, i.letter);
+                counter += 1;
+            } else {
+                counter += 1;
+            }
+        }
+        println!("{:?}", &word);
+        // counter += 1;
+    }
 
-    // if
-    // if i.back.len() == counter {
-    //     word.push(i.letter);
-    //     counter += 1;
-    // }
-    // }
-    // if i.back.is_empty() {
-    //     word.push(i.letter);
-    // }
-    // }
-    println!("{:?}", &sorted);
-    // }
-
-    // println!("{:#?}", vec_o_schrift);
-    // println!("{:#?}", word);
-    // for i in triplets[1..].iter() {
-    //     println!("{:?}", i);
-    //     for c in i.to_vec().iter() {
-    //         if i.position(|&c| c == 0) {
-    //             word_vec.push(c);
-    //         }
+    // counter = 3;
+    // for i in vec_o_schrift.iter() {
+    //     if i.back.contains(&word[counter]) && i.front.contains(&word[counter + 1]) {
+    //         word.insert(counter + 1, i.letter);
+    //         counter += 1;
     //     }
     // }
-    "String".to_string()
+
+    // counter = 3;
+    // for i in vec_o_schrift.iter() {
+    //     if i.back.contains(&word[counter]) && i.front.contains(&word[counter + 1]) {
+    //         word.insert(counter + 1, i.letter);
+    //         counter += 1;
+    //     }
+    // }
+    println!("{:?}", &word);
+    let word2: String = word.into_iter().collect();
+    word2
 }
