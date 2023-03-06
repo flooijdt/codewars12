@@ -90,14 +90,13 @@ fn recover_secret(triplets: Vec<[char; 3]>) -> String {
     }
     println!("{:?}", &word);
     while word.len() < lett.len() {
-        counter = 3;
+        counter = 4;
         for i in vec_o_schrift.iter() {
             if i.back.contains(&word[counter]) && i.front.contains(&word[counter + 1]) {
                 word.insert(counter + 1, i.letter);
                 counter += 1;
             }
         }
-        counter += 3;
     }
     println!("{:?}", &word);
     // counter += 1;
